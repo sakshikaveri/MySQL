@@ -6,7 +6,8 @@ USE coffee_store;
 CREATE table products(
 id INT auto_increment PRIMARY KEY,
 name VARCHAR(30),
-price DECIMAL(3,2)
+price DECIMAL(3,2),
+origin VARCHAR(20)
 );
 
 SHOW databases;
@@ -15,8 +16,8 @@ SHOW TABLES;
 CREATE TABLE customers(
 id INT auto_increment PRIMARY KEY,
 first_name VARCHAR(20),
-gender CHAR(1),
 last_name VARCHAR(20),
+gender CHAR(1),
 phone_number INT
 );
 SHOW TABLES;
@@ -29,3 +30,5 @@ order_time DATETIME,
 FOREIGN KEY(product_id) REFERENCES products(id),
 FOREIGN KEY(customer_id) REFERENCES customers(id)
 );
+
+DROP DATABASE coffee_store;
